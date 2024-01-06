@@ -1,20 +1,22 @@
 class Func:
 
     @staticmethod
-    def animationtype(x, z):
+    def animation_type(x, z):
         import time as t
-        y = list(x)
-        for char in y:
-            t.sleep(z)
-            print(char, end="")
+        lines = x.split('\n')  # Split input into lines
+        for line in lines:
+            line = line.rstrip()  # Remove trailing whitespace
+            for char in line:
+                t.sleep(z)
+                print(char, end='')
+            print()  # Add newline after each line
 
     @staticmethod
     def create(y):
-        with open(y, "a") as f:
-            pass
+        open(y, "a")
 
     @staticmethod
-    def clearcmd():
+    def clear_cmd():
         import os
         os.system('cls')
 
@@ -26,3 +28,5 @@ class Func:
 
         print("Hostname: ", hostname)
         print("IPv4 Address: ", ip_address)
+
+# Version - 2
