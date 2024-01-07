@@ -1,15 +1,16 @@
 class Func:
 
     @staticmethod
-    def animation_type(x, z):
+    def animate_text(text, delay, end_char='\n'):
         import time as t
-        lines = x.split('\n')  # Split input into lines
+
+        lines = text.split('\n')
         for line in lines:
-            line = line.rstrip()  # Remove trailing whitespace
+            line = line.rstrip()
             for char in line:
-                t.sleep(z)
+                t.sleep(delay)
                 print(char, end='')
-            print()  # Add newline after each line
+            print(end=end_char)
 
     @staticmethod
     def create(y):
@@ -29,4 +30,37 @@ class Func:
         print("Hostname: ", hostname)
         print("IPv4 Address: ", ip_address)
 
-# Version - 2
+    @staticmethod
+    def read_file(file_name):
+        with open(file_name, "r") as f:
+            lines = f.readlines()
+            content = ''.join(lines)
+            return content
+
+    @staticmethod
+    def write_file(file_name, content):
+        with open(file_name, "w") as f:
+            w = f.write(content)
+            return w
+
+    @staticmethod
+    def append_file(file_name, content):
+        with open(file_name, "a") as f:
+            a = f.write(content)
+            return a
+
+    @staticmethod
+    def count_words(text):
+        words = text.split()
+        return len(words)
+
+    @staticmethod
+    def reverse_text(text):
+        rev = text[::-1]
+        return rev
+
+    @staticmethod
+    def cap_first_letter(text):
+        return text.capitalize()
+
+# Version - 3
